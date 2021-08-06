@@ -5,10 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private int _money;
+    [SerializeField] private int _blood;
 
     private Animator _animator;
     private float _timeAnimationDeath = 0;
-
+   
     private void Start()
     {        
         _animator = GetComponent<Animator>();
@@ -26,6 +28,7 @@ public class Enemy : MonoBehaviour
         }
         else if(collision.TryGetComponent(out Player player))
         {
+            player.AddReward(_money, _blood);
             _timeAnimationDeath += Time.deltaTime;
             _animator.Play("death");
 
