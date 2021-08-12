@@ -12,12 +12,10 @@ public class TextCoin : MonoBehaviour
     {
         _player.MoneyChanget += OnMoneyChanget;
     }
-
     private void OnDisable()
     {
         _player.MoneyChanget -= OnMoneyChanget;
     }
-
     private void OnMoneyChanget(int blood)
     {
         _coin.text = blood.ToString();

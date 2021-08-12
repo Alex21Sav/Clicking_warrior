@@ -9,13 +9,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _blood;
 
     private Animator _animator;
-    private float _timeAnimationDeath = 0;
-   
+    private float _timeAnimationDeath = 0;   
     private void Start()
     {        
         _animator = GetComponent<Animator>();
     }
-
     private void Update()
     {
         transform.Translate(Vector3.left * _speed * Time.deltaTime);
@@ -36,7 +34,6 @@ public class Enemy : MonoBehaviour
             {
                 Die();
             }
-
         }            
     }
     private void Die()

@@ -12,12 +12,10 @@ public class TextBlood : MonoBehaviour
     {
         _player.BloodChanget += OnBloodChanget;
     }
-
     private void OnDisable()
     {
         _player.BloodChanget -= OnBloodChanget;
     }
-
     private void OnBloodChanget(int blood)
     {
         _blood.text = blood.ToString();

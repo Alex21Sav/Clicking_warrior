@@ -10,7 +10,6 @@ public class CoinMover : MonoBehaviour
     {
         transform.Translate(Vector3.left * _speed * Time.deltaTime);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Destroye destroye))
@@ -18,7 +17,6 @@ public class CoinMover : MonoBehaviour
             Die();
         }        
     }
-
     private void Die()
     {
         Destroy(gameObject);

@@ -15,7 +15,6 @@ public class Coin : MonoBehaviour
         }
         Die();
     }
-
     private void Die()
     {
         Destroy(gameObject);

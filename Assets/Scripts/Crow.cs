@@ -9,13 +9,11 @@ public class Crow : MonoBehaviour
 
     private Vector3 _targetLostPosition;
     private Tweener _tween;
-
     private void Start()
     {
         _tween = transform.DOMove(_target.position, 2).SetAutoKill(false);
         _targetLostPosition = _target.position;
     }
-
     private void Update()
     {
         if (_targetLostPosition != _target.position)
