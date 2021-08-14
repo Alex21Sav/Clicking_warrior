@@ -16,8 +16,8 @@ public class TextCoin : MonoBehaviour
     {
         _player.MoneyChanget -= OnMoneyChanget;
     }
-    private void OnMoneyChanget(int blood)
+    private void OnMoneyChanget(float blood)
     {
-        _coin.text = blood.ToString();
+        _coin.text = blood.ToString("0.0");
     }
 }

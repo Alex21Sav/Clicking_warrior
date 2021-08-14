@@ -5,20 +5,20 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    private int _magnificationFactorMoney = 1;
+    private float _magnificationFactorMoney = 1;
     //private int _magnificationFactorBlood = 0;
-    public int Money { get; private set; }
-    public int Blood { get; private set; }
+    public float Money { get; private set; }
+    public float Blood { get; private set; }
 
-    public event UnityAction<int> MoneyChanget;
-    public event UnityAction<int> BloodChanget;
-    public void AddReward(int money)
+    public event UnityAction<float> MoneyChanget;
+    public event UnityAction<float> BloodChanget;
+    public void AddReward(float money)
     {
         Money += money *_magnificationFactorMoney;
         Debug.Log($"{Money}");
         MoneyChanget?.Invoke(Money);
     }
-    public void AddReward(int money, int blood)
+    public void AddReward(float money, float blood)
     {
         Money += money * _magnificationFactorMoney;
         Blood += blood;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         MoneyChanget?.Invoke(Money);
         BloodChanget?.Invoke(Blood);
     }
-    public void AddFactorMoney(int factor)
+    public void AddFactorMoney(float factor)
     {
         _magnificationFactorMoney = _magnificationFactorMoney + factor;
     }

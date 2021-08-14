@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private int _money;
-    [SerializeField] private int _blood;
+    [SerializeField] private float _money;
+    [SerializeField] private float _blood;
 
     private Animator _animator;
     private float _timeAnimationDeath = 0;   

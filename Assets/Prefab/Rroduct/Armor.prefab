@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lable: Armor
   _icon: {fileID: 21300000, guid: 9614f1515ec3ed14283385904ea20eb4, type: 3}
-  _magnificationFactor: 2
-  Price: 3
+  _magnificationFactor: 0.3
+  Price: 30

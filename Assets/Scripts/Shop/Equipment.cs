@@ -7,9 +7,9 @@ public abstract class Equipment : MonoBehaviour
     [SerializeField] private string _lable;
     //[SerializeField] private int _price;
     [SerializeField] private Sprite _icon;
-    [SerializeField] private int _magnificationFactor;    
+    [SerializeField] private float _magnificationFactor;    
 
-    public int Price = 2;
+    public float Price = 2;
     public string Lable => _lable;
     //public int Price => _price;
     public Sprite Icon => _icon;       

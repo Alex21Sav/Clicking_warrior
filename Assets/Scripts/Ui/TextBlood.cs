@@ -16,8 +16,8 @@ public class TextBlood : MonoBehaviour
     {
         _player.BloodChanget -= OnBloodChanget;
     }
-    private void OnBloodChanget(int blood)
+    private void OnBloodChanget(float blood)
     {
-        _blood.text = blood.ToString();
+        _blood.text = blood.ToString("0.0");
     }
 }
