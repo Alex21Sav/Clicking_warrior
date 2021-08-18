@@ -18,6 +18,6 @@ public class TextBlood : MonoBehaviour
     }
     private void OnBloodChanget(float blood)
     {
-        _blood.text = blood.ToString("0.0");
+        _blood.text = ControllingNumberFormat.NumberFormat(blood);
     }
 }

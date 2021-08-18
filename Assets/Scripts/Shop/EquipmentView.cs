@@ -26,8 +26,8 @@ public class EquipmentView : MonoBehaviour
     public void Render(Equipment equipment)
     {
         _equipment = equipment;
-        _lable.text = equipment.Lable;
-        _price.text = equipment.Price.ToString();
+        _lable.text = equipment.Lable;        
+        _price.text = ControllingNumberFormat.NumberFormat(equipment.Price);
         _icon.sprite = equipment.Icon;
     }
     private void OnButtonClick()
