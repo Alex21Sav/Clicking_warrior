@@ -45,5 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lable: Boot
   _icon: {fileID: 21300000, guid: db6a7411e77cfad4dbebd8d2b73b1a52, type: 3}
-  _magnificationFactor: 0.5
+  _magnificationFactorCoin: 0.5
+  _magnificationFactorBlood: 0
   Price: 60

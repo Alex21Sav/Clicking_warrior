@@ -45,5 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lable: Sword
   _icon: {fileID: 21300000, guid: 8e06b0f9d02fa234f810017c4ea5cfec, type: 3}
-  _magnificationFactor: 5
+  _magnificationFactorCoin: 15
+  _magnificationFactorBlood: 0
   Price: 100000

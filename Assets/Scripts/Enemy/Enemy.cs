@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _money;
     [SerializeField] private float _blood;
+    [SerializeField] private GameObject _effectDie;
+    [SerializeField] private AudioSource _dieSound;
 
     private Animator _animator;
     private float _timeAnimationDeath = 0;   
@@ -26,13 +28,15 @@ public class Enemy : MonoBehaviour
         }
         else if(collision.TryGetComponent(out Player player))
         {
+            _dieSound.pitch = Random.Range(0.9f, 1.1f);
+            _dieSound.Play();
             player.AddReward(_money, _blood);
             _timeAnimationDeath += Time.deltaTime;
             _animator.Play("death");
-
+            Instantiate(_effectDie, transform.position, Quaternion.identity);
             if (_timeAnimationDeath > 2)
             {
-                Die();
+                Die();                
             }
         }            
     }

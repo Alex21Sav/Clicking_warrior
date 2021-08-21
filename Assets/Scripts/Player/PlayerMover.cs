@@ -7,6 +7,7 @@ public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForse = 10;
+    [SerializeField] private AudioSource _jumpSound;    
 
     private bool _isGraunded;
     private bool _isGraundedAnimator;
@@ -47,6 +48,7 @@ public class PlayerMover : MonoBehaviour
     {
         _isGraunded = false;
         _rigidbody.AddForce(transform.up * _jumpForse, ForceMode2D.Impulse);
+        _jumpSound.Play();
     }
     private void Run()
     {

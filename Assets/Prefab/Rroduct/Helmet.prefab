@@ -45,5 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lable: Helmet
   _icon: {fileID: 21300000, guid: ee36f64d518d30746873cac250690dae, type: 3}
-  _magnificationFactor: 0.1
+  _magnificationFactorCoin: 0.1
+  _magnificationFactorBlood: 0
   Price: 15

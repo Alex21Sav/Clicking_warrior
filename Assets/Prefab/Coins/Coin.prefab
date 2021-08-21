@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _money: 1
+  _effect: {fileID: 4866704716539923251, guid: 6597bf5bd01acb8469432bce2580de78, type: 3}
 --- !u!114 &6327166998702536265
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,5 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lable: Gloves
   _icon: {fileID: 21300000, guid: c7f076749f682244e8111c85766905f6, type: 3}
-  _magnificationFactor: 0.8
+  _magnificationFactorCoin: 1
+  _magnificationFactorBlood: 0
   Price: 1000

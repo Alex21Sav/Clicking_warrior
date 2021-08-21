@@ -45,5 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lable: Shield
   _icon: {fileID: 21300000, guid: a232f47508316704a9cd0bca2104548e, type: 3}
-  _magnificationFactor: 3
+  _magnificationFactorCoin: 10
+  _magnificationFactorBlood: 0
   Price: 10000
