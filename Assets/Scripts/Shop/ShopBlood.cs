@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+public class ShopBlood : MonoBehaviour
 {
     [SerializeField] private List<Equipment> _equipments;
     [SerializeField] private Player _player;
@@ -19,17 +19,8 @@ public class Shop : MonoBehaviour
     private void AddItem(Equipment equipment)
     {
         var view = Instantiate(_template, _itemContainer.transform);
-        view.SellButtonClick += OnSellButtonClick;
+        view.SellButtonClick += OnSellBloodButtonClick;
         view.Render(equipment);
-    }    
-    public void OnSellButtonClick(Equipment equipment, EquipmentView view)
-    {
-        if (equipment.Price <= _player.Money)
-        {
-            _player.BuyEquipment(equipment);
-            equipment.Buy(_player);
-            view.Render(equipment);
-        }        
     }
     public void OnSellBloodButtonClick(Equipment equipment, EquipmentView view)
     {
@@ -38,6 +29,6 @@ public class Shop : MonoBehaviour
             _player.BuyEquipmentBlood(equipment);
             equipment.Buy(_player);
             view.Render(equipment);
-        }        
+        }
     }
 }

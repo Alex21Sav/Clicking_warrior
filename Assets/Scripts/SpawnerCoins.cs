@@ -10,12 +10,7 @@ public class SpawnerCoins : MonoBehaviour
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private float _secondsBetweenSpawn;
         
-    private float _elapsedTime = 0;
-    
-    //private void Start()
-    //{
-    //    Initialize(_coinTemplates);
-    //}
+    private float _elapsedTime = 0;    
 
     public void Update()
     {

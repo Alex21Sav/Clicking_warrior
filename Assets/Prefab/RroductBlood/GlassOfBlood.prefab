@@ -47,4 +47,4 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 5627f39e957a1ef4e814b37efbad3a88, type: 3}
   _magnificationFactorCoin: 0
   _magnificationFactorBlood: 0.5
-  Price: 300
+  Price: 1
