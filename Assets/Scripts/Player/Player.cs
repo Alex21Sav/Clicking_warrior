@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     private float _magnificationFactorMoney;
     private float _magnificationFactorBlood;
+    private float _advertisingBonus = 1;
     public float Money { get; private set; }
     public float Blood { get; private set; }
 
@@ -30,13 +31,13 @@ public class Player : MonoBehaviour
     {
         _coinSound.pitch = Random.Range(0.9f, 1.1f);
         _coinSound.Play();
-        Money += money * _magnificationFactorMoney;
+        Money += (money + money * _magnificationFactorMoney) * _advertisingBonus;
         MoneyChanget?.Invoke(Money);
     }
     public void AddReward(float money, float blood)
     {
-        Money += money + money * _magnificationFactorMoney;
-        Blood += blood + blood * _magnificationFactorBlood;
+        Money += (money + money * _magnificationFactorMoney) * _advertisingBonus;
+        Blood += (blood + blood * _magnificationFactorBlood) * _advertisingBonus;
         MoneyChanget?.Invoke(Money);
         BloodChanget?.Invoke(Blood);
         PlayerPrefs.SetFloat("MoneySave", Money);
@@ -63,5 +64,10 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetFloat("BloodSave", Blood);
         BloodChanget?.Invoke(Blood);
         Debug.Log($"Совершили покупку");
+    }
+
+    public void BonusActivation(float bonusX)
+    {
+        _advertisingBonus = bonusX;
     }
 }
