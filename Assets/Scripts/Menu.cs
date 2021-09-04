@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject _shop;
-
+    [SerializeField] private Player _player;    
 
     public AudioMixerGroup AudioMixer;
 
 
     private void Start()
-    {
+    {         
         GetComponentInChildren<Toggle>().isOn = PlayerPrefs.GetInt("Music", 1) == 1;
         GetComponentInChildren<Slider>().value = PlayerPrefs.GetFloat("Valume", 1);
         _shop.SetActive(false);
@@ -53,8 +53,16 @@ public class Menu : MonoBehaviour
 
         PlayerPrefs.SetFloat("Valume", volume);
     }
+    public void ResetSave()
+    {
+        PlayerPrefs.DeleteKey("Valume");
+        PlayerPrefs.DeleteKey("Music");
+        _player.ResetSavePlayer();
+        //equipment.ResetSaveEquipment();
+    }
     public void Exit()
     {
         Application.Quit();
     }
+
 }

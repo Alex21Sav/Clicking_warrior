@@ -2,44 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Advertising : MonoBehaviour
 {
     [SerializeField] private Image _timerBar;
     [SerializeField] private float _maTime = 20f;
     [SerializeField] private float _bonusX = 2;
-    [SerializeField] private Player _player;    
+    [SerializeField] private Player _player;
+    [SerializeField] private GameObject _timer;
 
     private bool _isButton = false;
     private float _timeLeft;
-    void Start()
-    {        
-        _timeLeft = _maTime;
-    }
+    private Image _saveTimerBar;
 
-    // Update is called once per frame
-    void Update()
+    public event UnityAction<float> BonusActivation;
+
+    private void Start()
+    {        
+        _timeLeft = _maTime;        
+    }
+    private void Update()
     {
         if (_timeLeft > 0 && _isButton)
         {
             _timeLeft -= Time.deltaTime;
-            _timerBar.fillAmount = _timeLeft / _maTime;
-            Bonus(_player);
+            _timerBar.fillAmount = _timeLeft / _maTime;            
 
-            if(_timeLeft == 0)
+            BonusActivation?.Invoke(_bonusX);
+
+            if (_timeLeft <= 0)
             {
                 _isButton = false;
+                _timer.SetActive(false);
+                _timerBar.fillAmount = _maTime;
+                _timeLeft = _maTime;
+                BonusActivation?.Invoke(1f);
             }           
         }        
-    }   
-
-    private void Bonus(Player player)
-    {
-        player.BonusActivation(_bonusX);
     }
 
     public void OnButtonClick()
     {
         _isButton = true;
+        _timer.SetActive(true);
     }
 }

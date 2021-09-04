@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     [SerializeField] private AudioSource _coinSound;
+    [SerializeField] private Advertising _advertising;
 
     private float _magnificationFactorMoney;
     private float _magnificationFactorBlood;
@@ -16,6 +17,10 @@ public class Player : MonoBehaviour
     public event UnityAction<float> MoneyChanget;
     public event UnityAction<float> BloodChanget;
 
+    private void OnEnable()
+    {
+        _advertising.BonusActivation += BonusActivation;
+    }
     private void Start()
     {        
         Money = PlayerPrefs.GetFloat("MoneySave");
@@ -66,8 +71,19 @@ public class Player : MonoBehaviour
         Debug.Log($"Совершили покупку");
     }
 
+    public void ResetSavePlayer()
+    {
+        PlayerPrefs.DeleteKey("BloodSave");
+        PlayerPrefs.DeleteKey("MoneySave");
+        PlayerPrefs.DeleteKey("FactorMoneySave");
+        PlayerPrefs.DeleteKey("FactorBloodSave");
+    }
+    private void OnDisable()
+    {
+        _advertising.BonusActivation -= BonusActivation;
+    }
     public void BonusActivation(float bonusX)
     {
         _advertisingBonus = bonusX;
-    }
+    }    
 }
