@@ -11,7 +11,6 @@ public class Menu : MonoBehaviour
 
     public AudioMixerGroup AudioMixer;
 
-
     private void Start()
     {         
         GetComponentInChildren<Toggle>().isOn = PlayerPrefs.GetInt("Music", 1) == 1;

@@ -13,8 +13,7 @@ public class Advertising : MonoBehaviour
     [SerializeField] private GameObject _timer;
 
     private bool _isButton = false;
-    private float _timeLeft;
-    private Image _saveTimerBar;
+    private float _timeLeft;    
 
     public event UnityAction<float> BonusActivation;
 
@@ -41,7 +40,6 @@ public class Advertising : MonoBehaviour
             }           
         }        
     }
-
     public void OnButtonClick()
     {
         _isButton = true;
