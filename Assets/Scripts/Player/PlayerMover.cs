@@ -21,10 +21,19 @@ public class PlayerMover : MonoBehaviour
     private void Update()
     {
         Run();        
-        if (_isGraunded && Input.GetKeyDown(KeyCode.Space))
+        //if (_isGraunded && Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Jump();
+        //}
+
+        if (Input.touchCount > 0)
         {
-            Jump();
+            if(Input.GetTouch(0).phase == TouchPhase.Began && _isGraunded)
+            {
+                Jump();
+            }
         }
+
     }
     private void FixedUpdate()
     {

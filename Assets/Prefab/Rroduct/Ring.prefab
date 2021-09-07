@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lable: Ring
-  _icon: {fileID: 21300000, guid: c4c096841b5744f448d4850764e37b51, type: 3}
+  _icon: {fileID: 21300000, guid: 6cdde5ce82a4dad4ab507152d1398c79, type: 3}
   _magnificationFactorCoin: 5
   _magnificationFactorBlood: 0
   Price: 5000
