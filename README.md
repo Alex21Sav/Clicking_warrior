@@ -18,11 +18,14 @@ Implemented in the project:
 
 - Integrated advertising with reward (increasing the resources received for a specified period of time);
 
- ![grab-landing-page](https://github.com/Alex21Sav/Clicking_warrior/blob/main/2.gif)
+ ![grab-landing-page](https://github.com/Alex21Sav/Clicking_warrior/blob/main/3.gif)
 
 - Added background music and sounds, volume setting;
 - A store has been created, goods that increase the coefficient of received resources;
 
-![grab-landing-page](https://github.com/Alex21Sav/Clicking_warrior/blob/main/3.gif)
+![grab-landing-page](https://github.com/Alex21Sav/Clicking_warrior/blob/main/2.gif)
+
+
+
 
 
